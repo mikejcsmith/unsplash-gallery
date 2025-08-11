@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Unsplash Random Gallery</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .gallery {
+      width: 800px;
+      margin: 0 auto;
+    }
+    .gallery img {
+      width: 800px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery" id="gallery"></div>
+  <script>
+    const gallery = document.getElementById('gallery');
+    for (let i = 0; i < 10; i++) {
+      const img = document.createElement('img');
+      const unique = Math.random();
+      img.src = `https://source.unsplash.com/random/800x600?sig=${unique}`;
+      img.width = 800;
+      gallery.appendChild(img);
+    }
+  </script>
+</body>
+</html>
